@@ -7,16 +7,23 @@ namespace MyApp
         static void Main(string[] args)
         {
             int num1, num2;
+            bool flag = false;
             string option;
             Console.WriteLine("Press a for addition");
             Console.WriteLine("Press s for substraction");
             Console.WriteLine("Press m for multiplication");
             Console.WriteLine("Press d for division");
+            
             Console.WriteLine("press 1 to find the area ");
             Console.WriteLine("press 2 to find the volume");
+            Console.WriteLine("press 3 to check string is palandrom or not");
+
             int choice = Convert.ToInt32(Console.ReadLine());
-            option = Console.ReadLine();
-            switch(option)
+
+          /*  option = Console.ReadLine();
+
+
+            switch (option)
             {
                 case "a":
                     Console.WriteLine("Enter first number");
@@ -32,25 +39,28 @@ namespace MyApp
                     num2 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("The difference is: " + (num1 - num2));
                     break;
-                    case "m":
+                  case "m":
                     Console.WriteLine("Enter first number");
                     num1 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Enter second number");
                     num2 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("The product is: " + (num1 * num2));
                     break;
-                    case "d":
+                  case "d":
                     Console.WriteLine("Enter first number");
                     num1 = Convert.ToInt32(Console.ReadLine());   
                     Console.WriteLine("Enter second number");
                     num2 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("The quotient is: " + (num1 / num2));
                     break;
-                    default:
+                  default:
                     Console.WriteLine("Invalid option");
                     break;
-
+                   
+                   
+                    
             }
+          */
             switch(choice)
             {
                 case 1:
@@ -83,7 +93,7 @@ namespace MyApp
                         Console.WriteLine("invalid option");
                     } 
                     break;
-                    case 2:
+                case 2:
                     Console.WriteLine("press 1 to find the volume of cube");
                     Console.WriteLine("press 2 to find the volume of cuboid");
                     Console.WriteLine("press 3 to find the volume of sphere");
@@ -115,11 +125,38 @@ namespace MyApp
                         Console.WriteLine("invalid option");    
                     }
                     break;
-                    default:
+                case 3:
+                    Console.WriteLine("Enter the string to check Palandrom");
+                    string str = Console.ReadLine();
+                    
+                    for (int i = 0, j = str.Length - 1; i < str.Length / 2; i++, j--)
+                    {
+                        if (str[i] != str[j])
+                        {
+                            flag = false;
+                            break;
+                        }
+                        else
+                        {
+                            flag = true;
+                        }
+                    }
+                    if (flag)
+                    {
+                        Console.WriteLine("The string is Palandrom");
+                    }
+                    else
+                    {
+                        Console.WriteLine("The string is not Palandrom");
+                    }
+                    break;
+               default:
                     Console.WriteLine("invalid option");
                     break;
             }
-                
+
+            
+
         }
     }
 }
